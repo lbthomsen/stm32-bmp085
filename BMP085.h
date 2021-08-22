@@ -11,6 +11,15 @@
 #define BMP085_I2C_ADDR 0xee // Device write address
 #define BMP085_CALIBRATION_DATA_ADDRESS 0xaa
 
+#define BMP085_STATE_START 0
+#define BMP085_STATE_REQUEST_TEMP 1
+#define BMP085_STATE_WAIT_TEMP 2
+#define BMP085_STATE_GET_TEMP 3
+#define BMP085_STATE_REQUEST_PRESSURE 4
+#define BMP085_STATE_WAIT_PRESSURE 5
+#define BMP085_STATE_GET_PRESSURE 6
+#define BMP085_STATE_SLEEP 7
+
 typedef struct {
     int16_t ac1;
 	int16_t ac2;
@@ -35,6 +44,6 @@ typedef struct {
 
 HAL_StatusTypeDef BMP085_init(BMP085_HandleTypeDef *dev, I2C_HandleTypeDef *i2cHandle);
 
-HAL_StatusTypeDef BMP085_tick(); // Call every ms if possible
+HAL_StatusTypeDef BMP085_tick(BMP085_HandleTypeDef *dev); // Call every 1 ms if possible
 
 #endif /* BMP085_H_ */
