@@ -72,7 +72,7 @@ HAL_StatusTypeDef BMP085_tick(BMP085_HandleTypeDef *dev) {
 		HAL_I2C_Master_Receive(dev->i2cHandle, BMP085_I2C_ADDR, (uint8_t*) &buf, 2, 10);
 
 		int32_t ut = (buf[0] << 8) + buf[1];
-		int32_t x1 = (ut - dev->calibration_data.ac6) * (dev->calibration_data.ac5 / 2^15);
+		int32_t x1 = ((ut - dev->calibration_data.ac6) * dev->calibration_data.ac5 )  >> 15;
 		int32_t x2 = (dev->calibration_data.mc * 2^11) / (x1 + dev->calibration_data.md);
 		int32_t b5 = x1 + x2;
 
