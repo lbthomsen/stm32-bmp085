@@ -73,7 +73,7 @@ HAL_StatusTypeDef BMP085_tick(BMP085_HandleTypeDef *dev) {
 
 		int32_t ut = (buf[0] << 8) + buf[1];
 		int32_t x1 = ((ut - dev->calibration_data.ac6) * dev->calibration_data.ac5 )  >> 15;
-		int32_t x2 =  ((int32_t)dev->calibration_data.mc << 11) / (x1 + dev->calibration_data.md);
+		int32_t x2 =  (((int32_t)dev->calibration_data.mc) << 11) / (x1 + dev->calibration_data.md);
 		int32_t b5 = x1 + x2;
 
 		dev->temperature = (b5 + 8) / (2^4);
