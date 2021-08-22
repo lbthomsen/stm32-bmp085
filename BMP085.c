@@ -76,7 +76,7 @@ HAL_StatusTypeDef BMP085_tick(BMP085_HandleTypeDef *dev) {
 		int32_t x2 =  (((int32_t)dev->calibration_data.mc) << 11) / (x1 + dev->calibration_data.md);
 		int32_t b5 = x1 + x2;
 
-		dev->temperature = (b5 + 8) / (2^4);
+		dev->temperature = (b5 + 8) >> 4;
 
 		state_cnt = 0;
 		state = BMP085_STATE_REQUEST_PRESSURE;
