@@ -2,7 +2,7 @@
  * bmp085.h
  *
  *  Created on: Aug 21, 2021
- *      Author: lth
+ *      Author: Lars Boegild Thomsen <lbthomsen@gmail.com>
  */
 
 #ifndef BMP085_H_
@@ -10,6 +10,11 @@
 
 #define BMP085_I2C_ADDR 0xee // Device write address
 #define BMP085_CALIBRATION_DATA_ADDRESS 0xaa
+#define BMP085_REQUEST_ADDRESS 0xf4
+#define BMP085_GET_ADDRESS 0xf6
+
+#define BMP095_REQUEST_TEMP 0x2e
+#define BMP085_REQUEST_PRESSURE 0x34
 
 #define BMP085_STATE_START 0
 #define BMP085_STATE_REQUEST_TEMP 1
@@ -38,6 +43,7 @@ typedef struct {
 	I2C_HandleTypeDef *i2cHandle;
 	BMP085_calibration_data_s calibration_data;
 	HAL_StatusTypeDef status;
+	uint32_t delay;
 	int32_t temperature;
 	int32_t pressure;
 } BMP085_HandleTypeDef;
