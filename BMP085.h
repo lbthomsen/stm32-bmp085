@@ -34,6 +34,10 @@ typedef struct {
 	uint16_t ac6;
 	int16_t b1;
 	int16_t b2;
+	int16_t b3;
+	int16_t b4;
+	int16_t b5;
+	int16_t b6;
 	int16_t mb;
 	int16_t mc;
 	int16_t md;

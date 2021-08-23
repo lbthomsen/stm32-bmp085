@@ -32,6 +32,10 @@ HAL_StatusTypeDef BMP085_init(BMP085_HandleTypeDef *dev,
 	dev->calibration_data.ac6 = (buf[10] << 8) + buf[11];
 	dev->calibration_data.b1 = (buf[12] << 8) + buf[13];
 	dev->calibration_data.b2 = (buf[14] << 8) + buf[15];
+	dev->calibration_data.b3 = 0;                        // These are set during calculation
+	dev->calibration_data.b4 = 0;
+	dev->calibration_data.b5 = 0;
+	dev->calibration_data.b6 = 0;
 	dev->calibration_data.mb = (buf[16] << 8) + buf[17];
 	dev->calibration_data.mc = (buf[18] << 8) + buf[19];
 	dev->calibration_data.md = (buf[20] << 8) + buf[21];
@@ -74,9 +78,9 @@ HAL_StatusTypeDef BMP085_tick(BMP085_HandleTypeDef *dev) {
 		int32_t ut = (buf[0] << 8) + buf[1];
 		int32_t x1 = ((ut - dev->calibration_data.ac6) * dev->calibration_data.ac5 )  >> 15;
 		int32_t x2 =  (((int32_t)dev->calibration_data.mc) << 11) / (x1 + dev->calibration_data.md);
-		int32_t b5 = x1 + x2;
+		dev->calibration_data.b5 = x1 + x2;
 
-		dev->temperature = (b5 + 8) >> 4;
+		dev->temperature = (dev-calibration_data.b5 + 8) >> 4;
 
 		state_cnt = 0;
 		state = BMP085_STATE_REQUEST_PRESSURE;
@@ -100,7 +104,12 @@ HAL_StatusTypeDef BMP085_tick(BMP085_HandleTypeDef *dev) {
 		HAL_I2C_Master_Transmit(dev->i2cHandle, BMP085_I2C_ADDR, *&buf, 1, 10);
 		HAL_I2C_Master_Receive(dev->i2cHandle, BMP085_I2C_ADDR, (uint8_t*) &buf, 3, 10);
 
-		int32_t UP = (buf[0] << 16) + (buf[1] << 8) + buf[2];
+		int32_t up = (buf[0] << 16) + (buf[1] << 8) + buf[2];
+		dev->calibration_data.b6 = dev->calibration_data.b5 - 4000;
+		int32_t x1 = (dev->calibration_data.b2 * ((dev->calibration_data.b6 * dev->calibration_data.b6) >> 12)) >> 11;
+		int32_t x2 = (dev->calibration_data.ac2 * dev->calibration_data.b6) >> 11;
+		int32_t x3 = x1 + x2;
+		dev->calibration_data.b3 =
 
 		state_cnt = 0;
 		state = BMP085_STATE_SLEEP;
