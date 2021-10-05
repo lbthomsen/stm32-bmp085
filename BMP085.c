@@ -109,7 +109,8 @@ HAL_StatusTypeDef BMP085_tick(BMP085_HandleTypeDef *dev) {
 		int32_t x1 = (dev->calibration_data.b2 * ((dev->calibration_data.b6 * dev->calibration_data.b6) >> 12)) >> 11;
 		int32_t x2 = (dev->calibration_data.ac2 * dev->calibration_data.b6) >> 11;
 		int32_t x3 = x1 + x2;
-		dev->calibration_data.b3 =
+		dev->calibration_data.b3 = ((dev->calibration_data.ac1 * 4 + x3) << 2) / 4;
+
 
 		state_cnt = 0;
 		state = BMP085_STATE_SLEEP;
