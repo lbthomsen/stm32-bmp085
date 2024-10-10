@@ -139,11 +139,16 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-    uint32_t now = 0, next_tick = 1000;
+    uint32_t now = 0, next_tick = 1000, next_blink = 500;
 
     while (1) {
 
         now = uwTick;
+
+        if (now >= next_blink) {
+            HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
+            next_blink = now + 500;
+        }
 
         if (now >= next_tick) {
 
@@ -159,7 +164,7 @@ int main(void)
                 printf("Err\n");
             }
 
-            printf("Tick %lu - temp = %0.1f°C / %0.1f°F pres = %0.0f Pa / %0.1f mbar %0.2f inHg\n", now / 1000, temperature, temperature * 1.8 + 32, pressure, pressure * 0.01, pressure * 0.00029529983071445);
+            printf("Tick %lu Temperature: %0.1f°C / %0.1f°F Pressure: %0.0f Pa / %0.1f mbar (hPa) %0.2f inHg\n", now / 1000, temperature, temperature * 1.8 + 32, pressure, pressure * 0.01, pressure * 0.00029529983071445);
 
             next_tick = now + 1000;
 
@@ -291,13 +296,25 @@ static void MX_USART1_UART_Init(void)
   */
 static void MX_GPIO_Init(void)
 {
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
 /* USER CODE BEGIN MX_GPIO_Init_1 */
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOH_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin : LED_Pin */
+  GPIO_InitStruct.Pin = LED_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_OD;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
