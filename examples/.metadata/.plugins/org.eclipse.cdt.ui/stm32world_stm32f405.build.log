@@ -1,0 +1,16 @@
+18:27:49 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  24900	    468	   2100	  27468	   6b4c	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+
+18:27:49 Build Finished. 0 errors, 0 warnings. (took 290ms)
+
