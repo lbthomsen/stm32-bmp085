@@ -1,0 +1,6 @@
+../bmp085/bmp085.c:25:17:bmp085_write_registers	24	static
+../bmp085/bmp085.c:34:17:bmp085_read_registers	24	static
+../bmp085/bmp085.c:43:17:bmp085_get_calibration_values	32	static
+../bmp085/bmp085.c:71:17:bmp085_init	16	static
+../bmp085/bmp085.c:84:17:bmp085_get_temperature	40	static
+../bmp085/bmp085.c:118:17:bmp085_get_pressure	56	static
