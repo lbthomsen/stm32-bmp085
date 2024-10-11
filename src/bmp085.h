@@ -61,6 +61,7 @@ typedef struct {
     I2C_HandleTypeDef *i2c;
     uint16_t i2c_addr;
     BMP085_Calibration_TypeDef calibration_data;
+    short oss;
 } BMP085_HandleTypeDef;
 
 typedef enum {

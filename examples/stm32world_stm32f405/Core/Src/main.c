@@ -164,7 +164,7 @@ int main(void)
                 printf("Err\n");
             }
 
-            printf("Tick %lu Temperature: %0.1f°C / %0.1f°F Pressure: %0.0f Pa / %0.1f mbar (hPa) %0.2f inHg\n", now / 1000, temperature, temperature * 1.8 + 32, pressure, pressure * 0.01, pressure * 0.00029529983071445);
+            printf("Tick %lu Temp: %0.1f°C / %0.1f°F Pres: %0.0f Pa / %0.1f mbar (hPa) %0.2f inHg\n", now / 1000, temperature, temperature * 1.8 + 32, pressure, pressure * 0.01, pressure * 0.00029529983071445);
 
             next_tick = now + 1000;
 

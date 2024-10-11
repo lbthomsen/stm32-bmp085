@@ -74,6 +74,8 @@ BMP085_result_t bmp085_init(BMP085_HandleTypeDef *bmp085, I2C_HandleTypeDef *i2c
     bmp085->i2c = i2c;
     bmp085->i2c_addr = i2c_addr;
 
+    bmp085->oss = BMP085_OSS_HIGH;
+
     if (bmp085_get_calibration_values(bmp085) != BMP085_Ok) {
         return BMP085_Err;
     }
@@ -119,14 +121,14 @@ BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, float *pressur
 
     uint8_t buf[3] = { 0 };
 
-    buf[0] = BMP085_CMD_PRESSURE + (BMP085_OSS_HIGH << 6); // Temperature
+    buf[0] = BMP085_CMD_PRESSURE + (bmp085->oss << 6); // Temperature
 
     if (bmp085_write_registers(bmp085, BMP085_REG_CONTROL, (uint8_t*) &buf, 1) != BMP085_Ok) {
         return BMP085_Err;
     }
 
     // I hate delays - try to check isReady instead
-    HAL_Delay(30);
+    HAL_Delay(5 + bmp085->oss * 5);
 
     if (bmp085_read_registers(bmp085, BMP085_REG_RESULT, (uint8_t*) &buf, 3) != BMP085_Ok) {
         return BMP085_Err;
@@ -135,18 +137,18 @@ BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, float *pressur
     //BMP085_DBG("buf[0] = %d buf[1] = %d buf[2] = %d\n", buf[0], buf[1], buf[2]);
 
     // Got the raw pressure
-    long up = (((unsigned long) buf[0] << 16) + ((long) buf[1] << 8) + buf[2]) >> (8 - BMP085_OSS_HIGH);
+    long up = (((unsigned long) buf[0] << 16) + ((long) buf[1] << 8) + buf[2]) >> (8 - bmp085->oss);
 
     long b6 = bmp085->calibration_data.b5 - 4000;
     long x1 = (bmp085->calibration_data.b2 * (b6 * b6 / pow(2, 12))) / pow(2, 11);
     long x2 = bmp085->calibration_data.ac2 * b6 / pow(2, 11);
     long x3 = x1 + x2;
-    long b3 = ((bmp085->calibration_data.ac1 * 4 + x3) << BMP085_OSS_HIGH + 2) / 4;
+    long b3 = ((bmp085->calibration_data.ac1 * 4 + x3) << (bmp085->oss + 2)) / 4;
     x1 = bmp085->calibration_data.ac2 * b6 / pow(2, 13);
     x2 = (bmp085->calibration_data.b1 * (b6 * b6 / pow(2, 12))) / pow(2, 16);
     x3 = ((x1 + x2) + 2) / pow(2, 2);
     unsigned long b4 = bmp085->calibration_data.ac4 * (unsigned long) (x3 + 32768) / pow(2, 15);
-    unsigned long b7 = (unsigned long) (up - b3) * (50000 - BMP085_OSS_HIGH);
+    unsigned long b7 = (unsigned long)(up - b3) * (50000 - bmp085->oss);
     long p;
     if (b7 < 0x80000000) {
         p = (b7 * 2) / b4;
