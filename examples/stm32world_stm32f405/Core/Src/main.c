@@ -130,7 +130,7 @@ int main(void)
 
     printf("\n");
 
-    if (bmp085_init(&bmp085, &hi2c1, BMP085_DEFAULT_ADDR, BMP085_OSS_ULTRALOW) != BMP085_Ok) {
+    if (bmp085_init(&bmp085, &hi2c1, BMP085_DEFAULT_ADDR, BMP085_OSS_ULTRAHIGH) != BMP085_Ok) {
         printf("BMP095 Error!\n");
     }
 

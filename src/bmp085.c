@@ -196,8 +196,6 @@ BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, long *pressure
     x2 = (-7357 * p) / pow(2, 16);
 
     p = p + (x1 + x2 + 3791) / pow(2, 4);
-    //*pressure = p + (x1 + x2 + 3791) / pow(2, 4);
-    //*pressure = p + (x1 + x2 + 3791);
 
     BMP085_DBG("x1 = %ld\n", x1);
     BMP085_DBG("x2 = %ld\n", x2);

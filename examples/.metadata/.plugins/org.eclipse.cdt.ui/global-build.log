@@ -2533,3 +2533,68 @@ Finished building: default.size.stdout
  
 Finished building: stm32world_stm32f405.list
  
+14:06:13 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:167:61: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+  167 |             printf("Tick %lu Temp: %0.1f°C / %0.1f°F Pres: %d Pa / %0.1f mbar (hPa) %0.2f inHg\n", now / 1000, temperature, temperature * 1.8 + 32, pressure, pressure * 0.01, pressure * 0.00029529983071445);
+      |                                                            ~^                                                                                       ~~~~~~~~
+      |                                                             |                                                                                       |
+      |                                                             int                                                                                     long int
+      |                                                            %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31156	    468	   2100	  33724	   83bc	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+14:37:59 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:167:61: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+  167 |             printf("Tick %lu Temp: %0.1f°C / %0.1f°F Pres: %d Pa / %0.1f mbar (hPa) %0.2f inHg\n", now / 1000, temperature, temperature * 1.8 + 32, pressure, pressure * 0.01, pressure * 0.00029529983071445);
+      |                                                            ~^                                                                                       ~~~~~~~~
+      |                                                             |                                                                                       |
+      |                                                             int                                                                                     long int
+      |                                                            %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31156	    468	   2100	  33724	   83bc	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+14:45:50 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:167:61: warning: format '%d' expects argument of type 'int', but argument 5 has type 'long int' [-Wformat=]
+  167 |             printf("Tick %lu Temp: %0.1f°C / %0.1f°F Pres: %d Pa / %0.1f mbar (hPa) %0.2f inHg\n", now / 1000, temperature, temperature * 1.8 + 32, pressure, pressure * 0.01, pressure * 0.00029529983071445);
+      |                                                            ~^                                                                                       ~~~~~~~~
+      |                                                             |                                                                                       |
+      |                                                             int                                                                                     long int
+      |                                                            %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  30500	    468	   2100	  33068	   812c	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
