@@ -410,3 +410,6 @@ Command-line arguments:  -data /home/lth/src/stm32-bmp085/examples -os linux -ws
 
 !ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2024-10-13 14:45:55.063
 !MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 168000000; div: 84
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2024-10-13 20:57:29.769
+!MESSAGE SWV configuration; base: 36000000; minDiv: 18; maxDiv: 65535; maxSWO: 2000000; limit: 2000000 => SWO: 2000000; CPU: 168000000; div: 84
