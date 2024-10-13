@@ -69,7 +69,7 @@ typedef enum {
     BMP085_Err
 } BMP085_result_t;
 
-BMP085_result_t bmp085_init(BMP085_HandleTypeDef *bmp085, I2C_HandleTypeDef *i2c, uint16_t i2c_addr);
+BMP085_result_t bmp085_init(BMP085_HandleTypeDef *bmp085, I2C_HandleTypeDef *i2c, uint16_t i2c_addr, short oss);
 BMP085_result_t bmp085_get_temperature(BMP085_HandleTypeDef *bmp085, float *temperature);
 BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, float *pressure);
 

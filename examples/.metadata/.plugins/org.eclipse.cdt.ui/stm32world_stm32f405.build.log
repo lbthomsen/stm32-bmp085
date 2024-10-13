@@ -1,17 +1,17 @@
-10:19:43 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+10:38:09 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
 make -j4 all 
-arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32world_stm32f405.elf
  
 arm-none-eabi-size  stm32world_stm32f405.elf 
 arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
    text	   data	    bss	    dec	    hex	filename
-  30540	    468	   2100	  33108	   8154	stm32world_stm32f405.elf
+  31172	    468	   2100	  33740	   83cc	stm32world_stm32f405.elf
 Finished building: default.size.stdout
  
 Finished building: stm32world_stm32f405.list
  
 
-10:19:43 Build Finished. 0 errors, 0 warnings. (took 445ms)
+10:38:09 Build Finished. 0 errors, 0 warnings. (took 328ms)
 

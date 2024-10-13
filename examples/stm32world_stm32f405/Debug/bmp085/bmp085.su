@@ -3,4 +3,4 @@
 ../bmp085/bmp085.c:43:17:bmp085_get_calibration_values	40	static
 ../bmp085/bmp085.c:71:17:bmp085_init	24	static
 ../bmp085/bmp085.c:86:17:bmp085_get_temperature	40	static
-../bmp085/bmp085.c:120:17:bmp085_get_pressure	64	static
+../bmp085/bmp085.c:131:17:bmp085_get_pressure	64	static

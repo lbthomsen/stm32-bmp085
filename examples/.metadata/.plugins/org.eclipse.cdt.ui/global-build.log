@@ -552,3 +552,1689 @@ Finished building: default.size.stdout
  
 Finished building: stm32world_stm32f405.list
  
+08:28:26 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:88:5: warning: implicit declaration of function 'BMP_DBG'; did you mean 'BMP085_DBG'? [-Wimplicit-function-declaration]
+   88 |     BMP_DBG("bmp085_get_temperature\n")
+      |     ^~~~~~~
+      |     BMP085_DBG
+../bmp085/bmp085.c:88:40: error: expected ';' before 'uint8_t'
+   88 |     BMP_DBG("bmp085_get_temperature\n")
+      |                                        ^
+      |                                        ;
+   89 | 
+   90 |     uint8_t buf[2] = { 0 };
+      |     ~~~~~~~                             
+../bmp085/bmp085.c:92:5: error: 'buf' undeclared (first use in this function)
+   92 |     buf[0] = BMP085_CMD_TEMP; // Temperature
+      |     ^~~
+../bmp085/bmp085.c:92:5: note: each undeclared identifier is reported only once for each function it appears in
+make: *** [bmp085/subdir.mk:19: bmp085/bmp085.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+08:28:45 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:88:5: warning: implicit declaration of function 'BMP_DBG'; did you mean 'BMP085_DBG'? [-Wimplicit-function-declaration]
+   88 |     BMP_DBG("bmp085_get_temperature\n");
+      |     ^~~~~~~
+      |     BMP085_DBG
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: ./bmp085/bmp085.o: in function `bmp085_get_temperature':
+/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:88: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:110: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:116: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:117: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:122: undefined reference to `BMP_DBG'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:65: stm32world_stm32f405.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+08:28:53 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: ./bmp085/bmp085.o: in function `bmp085_get_temperature':
+/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:88: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:110: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:116: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:117: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:122: undefined reference to `BMP_DBG'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:65: stm32world_stm32f405.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+08:29:11 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:5: warning: implicit declaration of function 'BMP_DBG'; did you mean 'BMP085_DBG'? [-Wimplicit-function-declaration]
+  110 |     BMP_DBG("ut = %d\n", ut);
+      |     ^~~~~~~
+      |     BMP085_DBG
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: ./bmp085/bmp085.o: in function `bmp085_get_temperature':
+/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:110: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:116: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:117: undefined reference to `BMP_DBG'
+/home/lth/st/stm32cubeide_1.16.1/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.linux64_1.0.200.202406132123/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/bin/ld: /home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/Debug/../bmp085/bmp085.c:122: undefined reference to `BMP_DBG'
+collect2: error: ld returned 1 exit status
+make: *** [makefile:65: stm32world_stm32f405.elf] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+08:29:30 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:110:23: note: format string is defined here
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:116:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:116:23: note: format string is defined here
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:117:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:117:23: note: format string is defined here
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  30732	    468	   2100	  33300	   8214	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+08:29:33 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30732	    468	   2100	  33300	   8214	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+08:32:25 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:110:23: note: format string is defined here
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:116:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:116:23: note: format string is defined here
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:117:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:117:23: note: format string is defined here
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:155:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:155:23: note: format string is defined here
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  30884	    468	   2100	  33452	   82ac	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+08:40:07 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:110:23: note: format string is defined here
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:116:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:116:23: note: format string is defined here
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:117:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:117:23: note: format string is defined here
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:155:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:155:23: note: format string is defined here
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  30892	    468	   2100	  33460	   82b4	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+08:45:30 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:110:23: note: format string is defined here
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:116:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:116:23: note: format string is defined here
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:117:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:117:23: note: format string is defined here
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:155:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  155 |     BMP085_DBG("up = %l\n", up);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:155:24: note: format string is defined here
+  155 |     BMP085_DBG("up = %l\n", up);
+      |                        ^~
+../bmp085/bmp085.c:155:16: warning: too many arguments for format [-Wformat-extra-args]
+  155 |     BMP085_DBG("up = %l\n", up);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:163:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  163 |     BMP085_DBG("b6 = %l\n", b6);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:163:24: note: format string is defined here
+  163 |     BMP085_DBG("b6 = %l\n", b6);
+      |                        ^~
+../bmp085/bmp085.c:163:16: warning: too many arguments for format [-Wformat-extra-args]
+  163 |     BMP085_DBG("b6 = %l\n", b6);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:164:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  164 |     BMP085_DBG("x1 = %l\n", x1);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:164:24: note: format string is defined here
+  164 |     BMP085_DBG("x1 = %l\n", x1);
+      |                        ^~
+../bmp085/bmp085.c:164:16: warning: too many arguments for format [-Wformat-extra-args]
+  164 |     BMP085_DBG("x1 = %l\n", x1);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  165 |     BMP085_DBG("x2 = %l\n", x2);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:24: note: format string is defined here
+  165 |     BMP085_DBG("x2 = %l\n", x2);
+      |                        ^~
+../bmp085/bmp085.c:165:16: warning: too many arguments for format [-Wformat-extra-args]
+  165 |     BMP085_DBG("x2 = %l\n", x2);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  166 |     BMP085_DBG("x3 = %l\n", x3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:24: note: format string is defined here
+  166 |     BMP085_DBG("x3 = %l\n", x3);
+      |                        ^~
+../bmp085/bmp085.c:166:16: warning: too many arguments for format [-Wformat-extra-args]
+  166 |     BMP085_DBG("x3 = %l\n", x3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  167 |     BMP085_DBG("b3 = %l\n", b3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:24: note: format string is defined here
+  167 |     BMP085_DBG("b3 = %l\n", b3);
+      |                        ^~
+../bmp085/bmp085.c:167:16: warning: too many arguments for format [-Wformat-extra-args]
+  167 |     BMP085_DBG("b3 = %l\n", b3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31012	    468	   2100	  33580	   832c	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+Finished building: stm32world_stm32f405.list
+ 
+08:46:05 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:110:23: note: format string is defined here
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:116:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:116:23: note: format string is defined here
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:117:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:117:23: note: format string is defined here
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:163:23: note: format string is defined here
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:164:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  164 |     BMP085_DBG("x1 = %l\n", x1);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:164:24: note: format string is defined here
+  164 |     BMP085_DBG("x1 = %l\n", x1);
+      |                        ^~
+../bmp085/bmp085.c:164:16: warning: too many arguments for format [-Wformat-extra-args]
+  164 |     BMP085_DBG("x1 = %l\n", x1);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  165 |     BMP085_DBG("x2 = %l\n", x2);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:24: note: format string is defined here
+  165 |     BMP085_DBG("x2 = %l\n", x2);
+      |                        ^~
+../bmp085/bmp085.c:165:16: warning: too many arguments for format [-Wformat-extra-args]
+  165 |     BMP085_DBG("x2 = %l\n", x2);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  166 |     BMP085_DBG("x3 = %l\n", x3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:24: note: format string is defined here
+  166 |     BMP085_DBG("x3 = %l\n", x3);
+      |                        ^~
+../bmp085/bmp085.c:166:16: warning: too many arguments for format [-Wformat-extra-args]
+  166 |     BMP085_DBG("x3 = %l\n", x3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:16: warning: unknown conversion type character '\x0a' in format [-Wformat=]
+  167 |     BMP085_DBG("b3 = %l\n", b3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:24: note: format string is defined here
+  167 |     BMP085_DBG("b3 = %l\n", b3);
+      |                        ^~
+../bmp085/bmp085.c:167:16: warning: too many arguments for format [-Wformat-extra-args]
+  167 |     BMP085_DBG("b3 = %l\n", b3);
+      |                ^~~~~~~~~~~
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31012	    468	   2100	  33580	   832c	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+08:46:39 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:110:23: note: format string is defined here
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:116:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:116:23: note: format string is defined here
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:117:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:117:23: note: format string is defined here
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:155:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:155:23: note: format string is defined here
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:163:23: note: format string is defined here
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:164:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  164 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:164:23: note: format string is defined here
+  164 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:165:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  165 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:23: note: format string is defined here
+  165 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:166:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  166 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:23: note: format string is defined here
+  166 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:167:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  167 |     BMP085_DBG("b3 = %d\n", b3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:23: note: format string is defined here
+  167 |     BMP085_DBG("b3 = %d\n", b3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  30988	    468	   2100	  33556	   8314	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+08:49:28 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:110:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:110:23: note: format string is defined here
+  110 |     BMP085_DBG("ut = %d\n", ut);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:116:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:116:23: note: format string is defined here
+  116 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:117:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:117:23: note: format string is defined here
+  117 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:155:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:155:23: note: format string is defined here
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:163:23: note: format string is defined here
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:164:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  164 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:164:23: note: format string is defined here
+  164 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:165:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  165 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:23: note: format string is defined here
+  165 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:166:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  166 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:23: note: format string is defined here
+  166 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:167:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  167 |     BMP085_DBG("b3 = %d\n", b3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:23: note: format string is defined here
+  167 |     BMP085_DBG("b3 = %d\n", b3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:181:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  181 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:181:23: note: format string is defined here
+  181 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:182:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  182 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:182:23: note: format string is defined here
+  182 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:183:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  183 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:183:23: note: format string is defined here
+  183 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:184:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  184 |     BMP085_DBG("b4 = %d\n", b4);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long unsigned int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:184:23: note: format string is defined here
+  184 |     BMP085_DBG("b4 = %d\n", b4);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:185:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  185 |     BMP085_DBG("b7 = %d\n", b7);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long unsigned int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:185:23: note: format string is defined here
+  185 |     BMP085_DBG("b7 = %d\n", b7);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:186:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  186 |     BMP085_DBG("p  = %d\n", p);
+      |                ^~~~~~~~~~~  ~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:186:23: note: format string is defined here
+  186 |     BMP085_DBG("p  = %d\n", p);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:193:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  193 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:193:23: note: format string is defined here
+  193 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:194:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  194 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:194:23: note: format string is defined here
+  194 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:195:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  195 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:195:23: note: format string is defined here
+  195 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:196:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  196 |     BMP085_DBG("p  = %d\n", p);
+      |                ^~~~~~~~~~~  ~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:196:23: note: format string is defined here
+  196 |     BMP085_DBG("p  = %d\n", p);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31132	    468	   2100	  33700	   83a4	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+08:53:15 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_temperature':
+../bmp085/bmp085.c:122:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                ^~~~~~~~~~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                                     |
+      |                                                     long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:122:23: note: format string is defined here
+  122 |     BMP085_DBG("b5 = %d\n", bmp085->calibration_data.b5);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:155:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:155:23: note: format string is defined here
+  155 |     BMP085_DBG("up = %d\n", up);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:163:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:163:23: note: format string is defined here
+  163 |     BMP085_DBG("b6 = %d\n", b6);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:164:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  164 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:164:23: note: format string is defined here
+  164 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:165:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  165 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:23: note: format string is defined here
+  165 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:166:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  166 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:23: note: format string is defined here
+  166 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:167:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  167 |     BMP085_DBG("b3 = %d\n", b3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:23: note: format string is defined here
+  167 |     BMP085_DBG("b3 = %d\n", b3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:181:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  181 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:181:23: note: format string is defined here
+  181 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:182:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  182 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:182:23: note: format string is defined here
+  182 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:183:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  183 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:183:23: note: format string is defined here
+  183 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:184:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  184 |     BMP085_DBG("b4 = %d\n", b4);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long unsigned int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:184:23: note: format string is defined here
+  184 |     BMP085_DBG("b4 = %d\n", b4);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:185:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  185 |     BMP085_DBG("b7 = %d\n", b7);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long unsigned int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:185:23: note: format string is defined here
+  185 |     BMP085_DBG("b7 = %d\n", b7);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:186:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  186 |     BMP085_DBG("p  = %d\n", p);
+      |                ^~~~~~~~~~~  ~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:186:23: note: format string is defined here
+  186 |     BMP085_DBG("p  = %d\n", p);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:193:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  193 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:193:23: note: format string is defined here
+  193 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:194:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  194 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:194:23: note: format string is defined here
+  194 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:195:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  195 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:195:23: note: format string is defined here
+  195 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:196:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  196 |     BMP085_DBG("p  = %d\n", p);
+      |                ^~~~~~~~~~~  ~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:196:23: note: format string is defined here
+  196 |     BMP085_DBG("p  = %d\n", p);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31156	    468	   2100	  33724	   83bc	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+09:01:16 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+In file included from ../bmp085/bmp085.c:21:
+../bmp085/bmp085.c: In function 'bmp085_get_pressure':
+../bmp085/bmp085.c:157:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  157 |     BMP085_DBG("up = %d\n", up);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:157:23: note: format string is defined here
+  157 |     BMP085_DBG("up = %d\n", up);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:165:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  165 |     BMP085_DBG("b6 = %d\n", b6);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:165:23: note: format string is defined here
+  165 |     BMP085_DBG("b6 = %d\n", b6);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:166:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  166 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:166:23: note: format string is defined here
+  166 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:167:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  167 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:167:23: note: format string is defined here
+  167 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:168:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  168 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:168:23: note: format string is defined here
+  168 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:169:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  169 |     BMP085_DBG("b3 = %d\n", b3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:169:23: note: format string is defined here
+  169 |     BMP085_DBG("b3 = %d\n", b3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:183:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  183 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:183:23: note: format string is defined here
+  183 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:184:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  184 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:184:23: note: format string is defined here
+  184 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:185:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  185 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:185:23: note: format string is defined here
+  185 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:186:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  186 |     BMP085_DBG("b4 = %d\n", b4);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long unsigned int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:186:23: note: format string is defined here
+  186 |     BMP085_DBG("b4 = %d\n", b4);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:187:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  187 |     BMP085_DBG("b7 = %d\n", b7);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long unsigned int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:187:23: note: format string is defined here
+  187 |     BMP085_DBG("b7 = %d\n", b7);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:188:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  188 |     BMP085_DBG("p  = %d\n", p);
+      |                ^~~~~~~~~~~  ~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:188:23: note: format string is defined here
+  188 |     BMP085_DBG("p  = %d\n", p);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:195:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  195 |     BMP085_DBG("x1 = %d\n", x1);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:195:23: note: format string is defined here
+  195 |     BMP085_DBG("x1 = %d\n", x1);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:196:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  196 |     BMP085_DBG("x2 = %d\n", x2);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:196:23: note: format string is defined here
+  196 |     BMP085_DBG("x2 = %d\n", x2);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:197:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  197 |     BMP085_DBG("x3 = %d\n", x3);
+      |                ^~~~~~~~~~~  ~~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:197:23: note: format string is defined here
+  197 |     BMP085_DBG("x3 = %d\n", x3);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+../bmp085/bmp085.c:198:16: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long int' [-Wformat=]
+  198 |     BMP085_DBG("p  = %d\n", p);
+      |                ^~~~~~~~~~~  ~
+      |                             |
+      |                             long int
+../bmp085/bmp085.h:23:32: note: in definition of macro 'BMP085_DBG'
+   23 | #define BMP085_DBG(...) printf(__VA_ARGS__)
+      |                                ^~~~~~~~~~~
+../bmp085/bmp085.c:198:23: note: format string is defined here
+  198 |     BMP085_DBG("p  = %d\n", p);
+      |                      ~^
+      |                       |
+      |                       int
+      |                      %ld
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31188	    468	   2100	  33756	   83dc	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+10:06:09 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31164	    468	   2100	  33732	   83c4	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+10:13:44 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31164	    468	   2100	  33732	   83c4	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+10:13:50 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+   text	   data	    bss	    dec	    hex	filename
+  31164	    468	   2100	  33732	   83c4	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+10:25:24 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31164	    468	   2100	  33732	   83c4	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+10:28:39 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31164	    468	   2100	  33732	   83c4	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+10:36:35 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../bmp085/bmp085.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"bmp085/bmp085.d" -MT"bmp085/bmp085.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "bmp085/bmp085.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31172	    468	   2100	  33740	   83cc	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+10:37:42 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31172	    468	   2100	  33740	   83cc	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
+10:38:09 **** Incremental Build of configuration Debug for project stm32world_stm32f405 ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F405xx -c -I../Core/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/CMSIS/Include -I"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/bmp085" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "stm32world_stm32f405.elf" @"objects.list"   -mcpu=cortex-m4 -T"/home/lth/src/stm32-bmp085/examples/stm32world_stm32f405/STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32world_stm32f405.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: stm32world_stm32f405.elf
+ 
+arm-none-eabi-size  stm32world_stm32f405.elf 
+arm-none-eabi-objdump -h -S stm32world_stm32f405.elf  > "stm32world_stm32f405.list"
+   text	   data	    bss	    dec	    hex	filename
+  31172	    468	   2100	  33740	   83cc	stm32world_stm32f405.elf
+Finished building: default.size.stdout
+ 
+Finished building: stm32world_stm32f405.list
+ 
