@@ -128,7 +128,7 @@ BMP085_result_t bmp085_get_temperature(BMP085_HandleTypeDef *bmp085, float *temp
     return BMP085_Ok;
 }
 
-BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, float *pressure) {
+BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, long *pressure) {
 
     BMP085_DBG("bmp085_get_pressure\n");
 
@@ -152,14 +152,16 @@ BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, float *pressur
     BMP085_DBG("buf[0] = %d buf[1] = %d buf[2] = %d\n", buf[0], buf[1], buf[2]);
 
     // Got the raw pressure
-    long up = (((unsigned long) buf[0] << 16) + ((long) buf[1] << 8) + buf[2]) >> (8 - bmp085->oss);
+    long up = (( buf[0] << 16) + ( buf[1] << 8) + buf[2]) >> (8 - bmp085->oss);
 
     BMP085_DBG("up = %ld\n", up);
 
     long b6 = bmp085->calibration_data.b5 - 4000;
+
     long x1 = (bmp085->calibration_data.b2 * (b6 * b6 / pow(2, 12))) / pow(2, 11);
     long x2 = bmp085->calibration_data.ac2 * b6 / pow(2, 11);
     long x3 = x1 + x2;
+
     long b3 = ((bmp085->calibration_data.ac1 * 4 + x3) << (bmp085->oss + 2)) / 4;
 
     BMP085_DBG("b6 = %ld\n", b6);
@@ -171,11 +173,13 @@ BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, float *pressur
     x1 = bmp085->calibration_data.ac3 * b6 / pow(2, 13);
     x2 = (bmp085->calibration_data.b1 * (b6 * b6 / pow(2, 12))) / pow(2, 16);
     x3 = ((x1 + x2) + 2) / pow(2, 2);
-    unsigned long b4 = bmp085->calibration_data.ac4 * (unsigned long) (x3 + 32768) / pow(2, 15);
-    unsigned long b7 = ((unsigned long) up - b3) * (50000 >> bmp085->oss);
+
+    unsigned long b4 = bmp085->calibration_data.ac4 * (unsigned long)(x3 + 32768) / pow(2, 15);
+    unsigned long b7 = ((unsigned long)up - b3) * (50000 >> bmp085->oss);
+
     long p;
     if (b7 < 0x80000000) {
-        p = (b7 * 2) / b4;
+        p = (b7 * 8) / b4;
     } else {
         p = (b7 / b4) * 2;
     }
@@ -190,7 +194,10 @@ BMP085_result_t bmp085_get_pressure(BMP085_HandleTypeDef *bmp085, float *pressur
     x1 = (p / pow(2, 8)) * (p / pow(2, 8));
     x1 = (x1 * 3038) / pow(2, 16);
     x2 = (-7357 * p) / pow(2, 16);
+
     p = p + (x1 + x2 + 3791) / pow(2, 4);
+    //*pressure = p + (x1 + x2 + 3791) / pow(2, 4);
+    //*pressure = p + (x1 + x2 + 3791);
 
     BMP085_DBG("x1 = %ld\n", x1);
     BMP085_DBG("x2 = %ld\n", x2);
